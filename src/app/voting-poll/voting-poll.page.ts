@@ -9,7 +9,7 @@ import {
   IonInfiniteScroll,
   MenuController,
   PopoverController,
-  ToastController,
+  ToastController,Platform
 } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
@@ -53,7 +53,7 @@ export class VotingPollPage implements OnInit {
     sid: "",
     website: ""
   };
-  platformFlag: boolean = false;
+  platformFlag: boolean;
   textPoll_img_type: string = "";
   textPoll_img_url: any = "";
   youtubeRegex =
@@ -95,9 +95,17 @@ export class VotingPollPage implements OnInit {
   isValidGifSource = (url: string | string[]) =>
     this.approvedGifSources.some((v) => url.indexOf(v) >= 0);
 
-  constructor(private _sanitizer:DomSanitizer,private titleService: Title, private metaService: Meta,
+  constructor(private Platform:Platform,private _sanitizer:DomSanitizer,private titleService: Title, private metaService: Meta,
     private route: ActivatedRoute, private http: HttpClient, private userMediaService: UserMediaTrayService, private popoverController: PopoverController, private alertCtrl: AlertController) {
-    this.route.queryParamMap
+      // 
+      if(this.Platform.is('cordova'))
+        this.platformFlag=true;
+      else{
+          if(isPlatform('ios') || isPlatform('android'))
+             this.platformFlag = true;
+          else this.platformFlag=false
+      }
+      this.route.queryParamMap
       .subscribe((params) => {
         let paramsObject: any;
         paramsObject = { ...params };

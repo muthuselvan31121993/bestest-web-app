@@ -303,7 +303,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let VotingPollPage = class VotingPollPage {
-    constructor(_sanitizer, titleService, metaService, route, http, userMediaService, popoverController, alertCtrl) {
+    constructor(Platform, _sanitizer, titleService, metaService, route, http, userMediaService, popoverController, alertCtrl) {
+        this.Platform = Platform;
         this._sanitizer = _sanitizer;
         this.titleService = titleService;
         this.metaService = metaService;
@@ -337,7 +338,6 @@ let VotingPollPage = class VotingPollPage {
             sid: "",
             website: ""
         };
-        this.platformFlag = false;
         this.textPoll_img_type = "";
         this.textPoll_img_url = "";
         this.youtubeRegex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|\?v=)([^#&?]*).*/;
@@ -375,6 +375,15 @@ let VotingPollPage = class VotingPollPage {
             return true;
         };
         this.isValidGifSource = (url) => this.approvedGifSources.some((v) => url.indexOf(v) >= 0);
+        // 
+        if (this.Platform.is('cordova'))
+            this.platformFlag = true;
+        else {
+            if (Object(_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["isPlatform"])('ios') || Object(_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["isPlatform"])('android'))
+                this.platformFlag = true;
+            else
+                this.platformFlag = false;
+        }
         this.route.queryParamMap
             .subscribe((params) => {
             let paramsObject;
@@ -696,6 +705,7 @@ let VotingPollPage = class VotingPollPage {
     }
 };
 VotingPollPage.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"] },
     { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["DomSanitizer"] },
     { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["Title"] },
     { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["Meta"] },
