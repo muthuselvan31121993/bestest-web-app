@@ -20,6 +20,23 @@
           <ion-item lines="none">
             <ion-text class="poll">{{ poll?.poll }}</ion-text>
           </ion-item>
+          <ion-item *ngIf="textPoll_img_url !== ''">
+
+            <ion-img *ngIf="textPoll_img_type === 'gif'"
+
+              [src]="textPoll_img_url"></ion-img>
+
+            <ion-img *ngIf="textPoll_img_type === 'webImage'"
+
+              [src]="textPoll_img_url"></ion-img>
+
+            <iframe *ngIf="textPoll_img_type === 'youtube'" width="100%" height="300"
+
+              [src]="textPoll_img_url | safeResource: 'resourceUrl'" frameborder="0"
+
+              allowfullscreen></iframe>
+
+          </ion-item>
           <div *ngFor="let items of poll?.candidates;let j = index">
             <ion-row>
               <ion-col size="10">
