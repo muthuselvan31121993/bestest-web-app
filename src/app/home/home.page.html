@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Enter Pokemon number</ion-label>
+    <ion-input [(ngModel)]="id"></ion-input>
+  </ion-item>
+  <ion-button expand="full" routerLink="second">Open Second Page</ion-button>
+  <ion-button expand="full" [routerLink]="['home', id]">Open Details Page</ion-button>
+</ion-content>

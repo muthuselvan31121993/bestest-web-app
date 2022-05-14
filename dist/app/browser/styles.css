@@ -1,0 +1,433 @@
+/** Ionic CSS Variables **/
+:root {
+  /** primary **/
+  --ion-color-primary: #009604;
+  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-black: #000;
+  /** secondary **/
+  --ion-color-secondary-rgb: 61, 194, 255;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  /** tertiary **/
+  --ion-color-tertiary-rgb: 82, 96, 255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  /** success **/
+  --ion-color-success: #2dd36f;
+  --ion-color-success-rgb: 45, 211, 111;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #28ba62;
+  --ion-color-success-tint: #42d77d;
+  /** warning **/
+  --ion-color-warning: #ffc409;
+  --ion-color-warning-rgb: 255, 196, 9;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e0ac08;
+  --ion-color-warning-tint: #ffca22;
+  /** danger **/
+  --ion-color-danger: #eb445a;
+  --ion-color-danger-rgb: 235, 68, 90;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #cf3c4f;
+  --ion-color-danger-tint: #ed576b;
+  /** dark **/
+  --ion-color-dark: #222428;
+  --ion-color-dark-rgb: 34, 36, 40;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1e2023;
+  --ion-color-dark-tint: #383a3e;
+  /** medium **/
+  --ion-color-medium: #cecfd4e0;
+  --ion-color-medium-rgb: 146, 148, 156;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #808289;
+  --ion-color-medium-tint: #9d9fa6;
+  /** light **/
+  --ion-color-light: #ffffff;
+  --ion-color-light1: #cecfd4e0;
+  --ion-color-light-rgb: 244, 245, 248;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #d7d8da;
+  --ion-color-light-tint: #f5f6f9;
+}
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+/* Core CSS required for Ionic components to work properly */
+.preview-custom-modal .modal-wrapper {
+  background: rgba(0, 0, 0, 0.65) !important;
+}
+.input {
+  border-radius: 5.7px;
+  text-align: start;
+  border: 1.5px solid #009604;
+  height: 39.1px;
+  display: flex !important;
+  font-family: "Milliard-Book" !important;
+  letter-spacing: 0.18px;
+  font-weight: bold;
+}
+.clickEnableCls {
+  pointer-events: visible !important;
+}
+ion-card {
+  border-radius: 28.7px;
+  align-self: center;
+  border: 0.2px lightgray solid;
+}
+ion-card-content {
+  margin: 0%;
+}
+.button_design {
+  width: 80px;
+  height: 30px;
+  font-size: small;
+  align-self: flex-end;
+  border-radius: 15px;
+  margin-right: 15px;
+}
+.main_header {
+  font-family: "Milliard-Medium" !important;
+  color: black;
+  letter-spacing: 0.58px;
+  text-align: center;
+  font-size: 25px;
+}
+.sub_header {
+  font-size: x-small;
+  color: black;
+  font-family: "cooper book";
+}
+ion-list {
+  background-color: gray;
+}
+.round_corner {
+  border-radius: 100%;
+  color: white;
+}
+.buttonSize {
+  font-weight: lighter;
+  margin: 20% 20%;
+}
+.alert-message.sc-ion-alert-ios {
+  font-size: 15px;
+}
+.alert-button.sc-ion-alert-ios {
+  color: #1e86fd;
+  font-family: "helveticaneue" !important;
+}
+.alert-button.sc-ion-alert-ios:last-child {
+  font-weight: normal;
+  color: #1e86fd;
+  font-family: "helveticaneue" !important;
+}
+.alertCustomCss {
+  color: black;
+  font-family: "HelveticaNeue-Bold" !important;
+}
+.alertCustomCss button {
+  color: #1e86fd !important;
+  background-color: #FFFFFF !important;
+}
+.alertCustomCss .alert-message {
+  color: #212123;
+  font-family: "ARIALMT" !important;
+}
+.alertCustomCss .alert-wrapper {
+  background-color: #7f7f7f;
+  max-width: 800px;
+}
+.test {
+  float: right;
+}
+.checkbox-round {
+  zoom: 0.8;
+  --height: 20px;
+  --width: 20px;
+  --border-radius: 50%;
+  vertical-align: middle;
+  --border-color: #009604;
+}
+.bottom-sheet-popover .popover-content {
+  border-radius: 15px;
+  bottom: 10px !important;
+  width: 90%;
+  top: calc(100% - 300px) !important;
+}
+.nextButton {
+  --border-radius: 15.7px;
+  --background: #d9d9d9 !important;
+  color: white;
+  height: 40px;
+  display: block;
+  margin: 10%;
+  bottom: 0%;
+  text-transform: none !important;
+  font-weight: normal;
+  font-size: 15px;
+  font-family: "Milliard-Bold" !important;
+}
+.spanStyle {
+  text-align: center;
+  font-size: xx-small;
+  align-self: center;
+}
+.my-custom-class {
+  --background: #222;
+  --spinner-color: #fff;
+  color: #fff;
+}
+.popup_icon {
+  height: 40px;
+  width: 50px;
+}
+.calendar {
+  margin-left: 10px;
+  color: #979797;
+  font-size: x-small;
+}
+.calendarText {
+  margin-left: 5px;
+  color: #bbbbbd;
+  letter-spacing: -0.3px;
+  font-size: 6.3px;
+  font-family: "Milliard-Book" !important;
+}
+.headerImage {
+  height: 40.9px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 101.6px;
+  margin-top: 20px;
+}
+.bgImage {
+  --background: url(/assets/icon/background.png) 0 0/100% 100% no-repeat;
+}
+.noMoreDataRow {
+  margin-bottom: 65px;
+  display: block;
+  position: relative;
+}
+.noMoreDataCol {
+  display: block;
+  position: relative;
+}
+.noMoreDataLabel {
+  text-align: center;
+  display: block;
+  padding: 6px;
+  margin: 0 10px;
+  border-radius: 13px;
+  font-size: 10px;
+}
+.popupOver .popover-content {
+  margin: auto;
+  width: 90%;
+  bottom: 0;
+  top: 0px !important;
+  left: 0px !important;
+  right: 0;
+  height: 265px !important;
+  border-radius: 7px !important;
+}
+.popupOver .popover-ios .popover-content {
+  height: 45%;
+}
+.popupOver .popover-viewport {
+  height: 100%;
+  position: relative;
+  overflow-y: hidden;
+}
+.popupOverCard {
+  margin: auto;
+  width: 90%;
+  bottom: 0;
+  top: 0px !important;
+  left: 0px !important;
+  right: 0;
+  height: 70% !important;
+  border-radius: 7px !important;
+}
+.btnCss {
+  color: white;
+  background: #009604;
+  height: 37px;
+  display: block;
+  position: relative;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 28px;
+  font-size: 19px;
+  width: 70%;
+}
+.btnCol {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.headerColor {
+  --background:#000 !important;
+}
+.signup-txt {
+  color: #009604;
+  font-size: 11px;
+  letter-spacing: 0.22px;
+  font-family: "Milliard-Medium" !important;
+}
+.webHome .popover-content {
+  margin: auto;
+  width: 90% !important;
+  height: 100% !important;
+  bottom: 0px !important;
+  right: 0;
+  top: 0 !important;
+  left: 0 !important;
+  border-radius: 7px !important;
+  display: table;
+  height: 100%;
+  max-height: 100%;
+  width: 100% !important;
+  padding: 0px !important;
+  margin-bottom: 0px !important;
+  background: rgba(0, 0, 0, 0.65) !important;
+}
+.webHome.popover-ios .popover-content {
+  display: table;
+  height: 100%;
+  width: 100% !important;
+  padding: 0px !important;
+  margin-bottom: 0px !important;
+  background: rgba(0, 0, 0, 0.65) !important;
+}
+.webHome ion-backdrop {
+  visibility: none;
+}
+.webHome .popover-viewport {
+  display: table;
+  height: 100%;
+  width: 100% !important;
+  padding: 0px !important;
+  margin-bottom: 0px !important;
+  position: relative;
+  overflow-y: hidden;
+}
+.modal-wrapper {
+  background: transparent !important;
+}
+.appDownload .popover-content {
+  display: table;
+  height: 120px;
+  margin: 0 20px !important;
+  width: 90% !important;
+  padding: 0px !important;
+  bottom: 0;
+  right: 0;
+  top: 0 !important;
+  left: 0 !important;
+  border-radius: 7px !important;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.65) !important;
+}
+.appDownload.popover-ios .popover-content {
+  display: table;
+  height: 100%;
+  width: 100% !important;
+  padding: 0px !important;
+  margin: 0px !important;
+  background: rgba(0, 0, 0, 0.65) !important;
+}
+.webHome ion-backdrop {
+  visibility: none;
+}
+ion-toolbar, ion-header {
+  --min-height: 100px;
+}
+.searchbar-input-container.sc-ion-searchbar-md {
+  border: 1px solid #009604;
+  display: block;
+  position: relative;
+  flex-shrink: 1;
+  width: 100%;
+  border-radius: 1.3px;
+  color: #7f7e7e;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.searchbar-input {
+  padding-left: 9px !important;
+}
+.searchbar-search-icon {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.searchbar-search-icon.sc-ion-searchbar-md {
+  left: 0px;
+  top: 0px;
+  width: 0px;
+  height: 0px;
+}
+ion-searchbar .searchbar-input-container input {
+  font-size: 16.7px !important;
+  font-family: "Milliard-Book" !important;
+}
+:host ::ng-deep .sc-ion-popover-md-h {
+  max-height: 100% !important;
+}
+.webDesktopVotingCard {
+  max-width: 500px;
+  background: url(/assets/icon/background.png) 0 0/100% 100% no-repeat;
+  margin: 15px 0 0 15px;
+}
+.contentHeight {
+  height: 100%;
+}
+.coltwo {
+  margin-top: 15%;
+  margin-left: -10%;
+}
+.bestestLogo {
+  width: 210px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+  align-items: center;
+}
+.createPollDiv {
+  color: white;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+}
+.dektopCreatePollcss {
+  --background:#000 !important;
+}
+
+/*# sourceMappingURL=styles.css.map*/

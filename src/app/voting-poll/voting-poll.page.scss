@@ -1,0 +1,1011 @@
+.inputText {
+    border-radius: 3.7px;
+    text-align: start;
+    //--background: rgb(199, 232 ,200) !important;
+    //border: 1.2px solid #009604;
+    height: 40px !important;
+    display: inline-block;
+    font-family: 'Milliard-SemiBold' !important;
+    font-size: 16.7px;
+    .native-input.sc-ion-input-md {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  
+  }
+  
+  
+  ion-item.sc-ion-input-md-h:not(.item-label),
+  ion-item:not(.item-label) .sc-ion-input-md-h {
+    --padding-start:3.5%;
+    height: 50px !important;
+    margin-top: 10px;
+  }
+  
+  .bottom-sheet-popover .popover-content {
+    border-radius: 15px;
+    bottom: 10px !important;
+    top: calc(100% - 200px) !important;
+  }
+  
+  .header {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .main_headers {
+    font-family: "Milliard-Bold" !important;
+    font-weight: bolder;
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+    margin-top: 10%;
+  }
+  
+  .icon {
+    font-size: small;
+    margin-right: 2px;
+    margin-top: 2px;
+  
+  }
+  
+  .menu {
+    float: right;
+    margin-right: 15px;
+    margin-top: 10px;
+    height: 20px;
+    font-size: x-large;
+    font-weight: bold;
+  }
+  
+  .share {
+    float: right;
+    font-size: large;
+    margin-top: 10px;
+  }
+  
+  .calendar {
+    margin-left: 5px;
+    font-size: x-small;
+  }
+  
+  .filter {
+    color: rgb(0 150 4);
+    margin-top: 5%;
+    margin-right: 8px;
+    text-align: right;
+  }
+  
+  .filterLabel {
+    font-size: small;
+    margin-bottom: auto
+  }
+  
+  .label {
+    font-size: 16.7px;
+    color: rgb(0, 0, 0);
+    font-family: 'Milliard-Book' !important;
+    margin-left: 12px;
+  }
+  
+  .more {
+    float: right;
+    margin-right: 15px;
+    margin-top: 10px;
+    height: 20px;
+    font-size: 60px;
+  }
+  
+  .userName {
+    font-family: 'Milliard-Bold' !important;
+    font-size: 19.7px;
+    letter-spacing: -0.23px;
+    color: rgb(72, 73, 73);
+  }
+  
+  .name {
+    font-family: 'Milliard-Book' !important;
+    font-size: 9px;
+    letter-spacing: 0.03px;
+    color: rgb(0, 0, 0);
+  }
+  
+  .cardClass {
+    margin: 5px;
+    margin-top: 10px
+  }
+  
+  .questionMark {
+    color: rgb(0, 0, 0);
+    font-size: 16.7px;
+    font-family: 'Milliard-SemiBold' !important;
+  }
+  
+  .questionMarkGray {
+    color: rgb(0, 0, 0);
+    font-size: 16.7px;
+    font-family: 'Milliard-Medium' !important;
+  }
+  
+  .time {
+    margin-top: 30px;
+    color: #979797;
+    margin-bottom: auto;
+  }
+  
+  .timeIcon {
+    font-size: x-small;
+    margin-top: 2px;
+  }
+  
+  .timeLabel {
+    margin-left: 2px;
+    font-size: x-small;
+  }
+  
+  .votes {
+    font-size: 16.7px;
+    float: right;
+    margin-right: 4%;
+    font-family: 'Milliard-Book' !important;
+    color: rgb(48, 48, 48);
+  }
+  
+  .voteCard {
+    padding: 0 5px;
+  
+    .voteBox {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+  
+  .votelabel {
+    font-family: 'Milliard-Book' !important;
+    font-size: 16.7px;
+    color: rgb(48, 48, 48);
+  }
+  
+  .voteResult {
+    font-size: 16.7px;
+    color: rgb(48, 48, 48);
+    font-family: 'Milliard-Bold' !important;
+    margin-left: 3px;
+  }
+  
+  .shareIcon {
+    font-size: x-large;
+    transform: rotateY(180deg);
+    margin-top: 6px;
+    margin-right: 10px;
+  }
+  
+  .progress {
+    height: 38px;
+    position: absolute;
+    z-index: -1;
+    margin-left: 0px;
+    border-radius: 2px;
+    --progress-background: #009604 !important;
+    --buffer-background: rgb(199, 232 ,200) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    transition: 20s width linear 1s;
+  }
+  
+  .poll {
+    font-size: 20px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+    font-family: 'Milliard-Bold' !important;
+    line-height: 23.3px;
+    letter-spacing: 0.47px;
+    color: rgb(0, 0, 0);
+  }
+  
+  .filterLabel {
+    font-size: x-small;
+    margin-bottom: auto
+  }
+  
+  .votePercent {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+  }
+  
+  .myCard {
+    position: relative;
+  }
+  
+  .image-label {
+    text-align: center;
+    color: #009604;
+    display: flex !important;
+    font-size: small;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  
+  .myOverlay {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    z-index: 99;
+  
+    opacity: 0.5;
+    margin-left: 60%;
+    margin-top: 20%;
+    color: black;
+    font-weight: bold;
+  }
+  .two-image-layout-square {
+    display: flex;
+  //  flex-wrap: wrap;
+    justify-content: center;
+   // padding-left: 10px;
+  
+    .two-image-layout-square-item {
+    //  flex: 45%;
+    //  margin-right: 10px;
+    //  margin-bottom: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+      margin-bottom: 5%;
+      ion-img {
+        height: 156.3px;
+        width: 156.3px;
+       // margin-left: 4px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px !important;
+        overflow: hidden;
+      }
+    }
+  }
+  .two-image-layout-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+  
+    .two-image-layout-horizontal-item {
+      flex: 100%;
+      height: 150.7px;
+      margin-right: 10px;
+      margin-bottom: 5%;
+      margin-top: 25px;
+  
+      ion-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px !important;
+        overflow: hidden;
+      }
+    }
+  }
+  .two-image-layout-vertical {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 10px;
+  
+    .two-image-layout-vertical-item {
+      flex: 45%;
+      margin-right: 10px;
+      margin-bottom: 5%;
+      height: 308.3px;
+      ion-img {
+        height: 308.3px;
+        width: 157px;
+       // margin-left: 5%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px !important;
+        overflow: hidden;
+      }
+    }
+  }
+  .three-image-layout-square {
+    display: flex;
+   // flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 5px;
+   // padding-left: 10px;
+  
+    .three-image-layout-square-item {
+      flex: 29%;
+      margin-right: 15px;
+      margin-bottom: 5%;
+      height: 102.3px;
+      width: 102.3px;
+      ion-img {
+        height: 102.3px;
+        width: 102.3px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px !important;
+        overflow: hidden;
+      }
+    }
+  }
+  .three-image-layout-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+  
+    .three-image-layout-horizontal-item {
+      flex: 100%;
+      height: 97.7px;
+      width: 321.7px;
+      margin-right: 10px;
+      margin-bottom: 5%;
+      margin-top: 25px;
+      
+      ion-img {
+        height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 10px !important;
+      overflow: hidden;
+      }
+    }
+  }
+  .three-image-layout-vertical {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+  
+    .three-image-layout-vertical-item {
+      flex: 29%;
+      margin-right: 10px;
+      margin-bottom: 10%;
+      height: 308px;
+      width: 104.3px;
+      ion-img {
+        height: 308px;
+        width: 104.3px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px !important;
+        overflow: hidden;
+      }
+    }
+  }
+  
+  .imageStyle {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px !important;
+    overflow: hidden;
+  }
+  
+  
+  .four-image-layout {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+  
+    .four-image-layout-item {
+      flex: 45%;
+      height: 150px;
+      margin-right: 10px;
+      margin-bottom: 30px;
+  
+      ion-img {
+        height: 100%;
+        width: 100%;
+        object-fit: none;
+        object-position: center;
+        border-radius: 10px !important;
+        overflow: hidden;
+      }
+    }
+  
+  }
+  
+  .roundProgress {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    z-index: 99;
+  
+    opacity: 0.5;
+    margin-left: 60%;
+    margin-top: 20%;
+    color: black;
+    font-weight: bold;
+  
+  }
+  
+  
+  .container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px !important;
+    overflow: hidden;
+  
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  
+  div.absolute {
+    position: absolute;
+    top: 95px;
+    right: 0;
+    width: 60px;
+    height: 50px;
+  }
+  
+  div.absoluteO {
+    position: absolute;
+    top: 75%;
+    right: 0;
+    width: 60px;
+    height: 50px;
+  }
+  
+  div.absoluteT {
+    position: absolute;
+    top: 42%;
+    right: 0;
+    width: 60px;
+    height: 50px;
+  }
+  
+  div.absoluteS {
+    position: absolute;
+    top: 65%;
+    right: 0;
+    width: 60px;
+    height: 50px;
+  }
+  
+  div.absoluteTV {
+    position: absolute;
+    top: 80%;
+    right: 0;
+    width: 60px;
+    height: 50px;
+  }
+  
+  div.absoluteTHS {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    height: 50px;
+  }
+  
+  div.absoluteTHV {
+    position: absolute;
+    top: 82%;
+    right: 0;
+    width: 55px;
+    height: 50px;
+  }
+  
+  .topleft {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 18px;
+  }
+  
+  
+  .popup {
+    display: none;
+    position: absolute;
+    right: 15px;
+    width: 150px;
+    --background: #A3A3A3 !important;
+    z-index: 9;
+  }
+  
+  .labelFilter {
+    font-size: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+    vertical-align: middle;
+    letter-spacing: -0.5px;
+    font-family: 'Milliard-Book' !important;
+  }
+  
+  .item_bottom {
+    border-bottom: 0.2px solid rgb(235, 234, 234);
+    height: 35px;
+  }
+  
+  .one-image-layout {
+    margin: 0 10px;
+    height: 250px;
+  }
+  
+  @keyframes growProgressBar {
+  
+    0%,
+    33% {
+      --pgPercentage: 0;
+    }
+  
+    100% {
+      --pgPercentage: var(--value);
+    }
+  }
+  
+  @property --pgPercentage {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+  }
+  
+  div[role="progressbar"] {
+    --size: 12rem;
+    --fg: rgb(0 150 4);
+    --bg: #e0f0e0;
+    --pgPercentage: var(--value);
+    animation: growProgressBar 1s 1 forwards;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+      conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+    font-size: 12px;
+    color: var(--fg);
+  }
+  
+  div[role="progressbar"]::before {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) '%';
+  }
+  
+  /* demo */
+  body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .createdAt {
+    color: rgb(187, 187, 189);
+    margin-left: 2px;
+    font-size: 8.3pt;
+    letter-spacing: -0.22px;
+    font-family: 'Milliard-Book' !important;
+  }
+  
+  @keyframes growProgressBar1 {
+  
+    0%,
+    33% {
+      --pgPercentage1: 0;
+    }
+  
+    100% {
+      --pgPercentage1: var(--value1);
+    }
+  }
+  
+  @property --pgPercentage1 {
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+  }
+  
+  div[role="progressbar1"] {
+    --size: 12rem;
+    --bg: #53a156;
+    --fg: #e0f0e0;
+    --pgPercentage1: var(--value1);
+    animation: growProgressBar1 1s 1 alternate-reverse;
+    width: 50px;
+    height: 50px !important;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+      conic-gradient(var(--fg) calc(var(--pgPercentage1) * 1%), var(--bg) 0);
+    font-size: 12px;
+    color: var(--fg);
+  }
+  
+  div[role="progressbar1"]::before {
+    // counter-reset: percentage var(--value1);
+    color: rgb(0 150 4);
+    content: counter(percentage) '%';
+  }
+  
+  .progressForword {
+    animation: progresforword 1s reverse;
+    animation-fill-mode: both;
+    height: 50px !important;
+    position: absolute;
+    z-index: -1;
+    margin-left: 0px;
+    border-radius: 3.7px;
+   // border: 2px solid #009604;
+   border-top: 1px solid rgb(0 150 4);
+    border-bottom: 1px solid rgb(0 150 4);
+    border-right: 1px solid rgb(0 150 4);
+    --progress-background: #009604 !important;
+   --buffer-background: white !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .progressbgColor { 
+    animation: progressbgColor 1s reverse;
+    animation-fill-mode: both;
+    height: 50px !important;
+    position: absolute;
+    z-index: -1;
+    margin-left: 0px;
+    border-radius: 3.7px;
+   // border: 2px solid #009604;
+   border-top: 1px solid rgb(0 150 4);
+    border-bottom: 1px solid rgb(0 150 4);
+    border-right: 1px solid rgb(0 150 4);
+    border-left: 1px solid rgb(0 150 4) ;
+    --progress-background: rgb(199, 232 ,200) !important;
+   --buffer-background: white !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  @keyframes progressbgColor {
+    0% {
+      width: 100%;
+    }
+  
+    100% {
+      width: 0%;
+    }
+  };
+  @keyframes progresforword {
+    0% {
+      width: 100%;
+    }
+  
+    100% {
+      width: 0%;
+    }
+  };
+  
+  .progressReverse {
+    animation: progresreverse 1s reverse;
+    animation-fill-mode: both;
+    height: 50px !important;
+    position: absolute;
+    z-index: -1;
+    margin-left: 0px;
+    border-radius: 3.7px;
+  //  border: 2px solid #009604;
+  border-top: 1px solid rgb(0 150 4);
+  border-bottom: 2px solid rgb(0 150 4);
+    --progress-background: rgb(199, 232 ,200) !important;
+   // --buffer-background: rgb(199, 232 ,200) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+  }
+  @keyframes progresreverse {
+    0% {
+      width: 3%;
+    }
+  
+    100% {
+      width: 100%;
+    }
+  };
+  .progress3 {
+    animation: progresfulltest 0ms reverse;
+    animation-fill-mode: both;
+    height: 50px !important;
+    position: absolute;
+    z-index: -1;
+    margin-left: 0px;
+    --progress-background: rgb(199, 232 ,200) !important;
+    //--buffer-background:white  !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+  }
+  @keyframes progresfulltest {
+    0% {
+      width: 3%;
+    }
+  };
+  .progressDelete {
+    animation: progressdelete 800ms reverse;
+    animation-fill-mode: both;
+    height: 50px !important;
+    position: absolute;
+    z-index: -1;
+    margin-left: 0px;
+    border-radius: 3.7px;
+    border-top: 1px solid rgb(0 150 4);
+    border-bottom: 1px solid rgb(0 150 4);
+    --progress-background: rgb(0 150 4) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+  }
+  @keyframes progressdelete {
+    0% {
+      width: 0%;
+    }
+  
+    100% {
+      width: 100%;
+    }
+  };
+  .defaultprogres {
+    animation: defaultprogres 0ms reverse;
+    animation-fill-mode: both;
+    height: 50px !important;
+    position: absolute;
+    z-index: -1;
+    margin-left: 0px;
+    --progress-background: rgb(199, 232 ,200) !important;
+    //--buffer-background:white  !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  @keyframes defaultprogres {
+    0% {
+      width: 3%;
+    }
+  };
+  
+
+.cardClass{
+    margin: 20px 10px 0 10px !important;
+}
+.ionContentClass{
+    --background: #000;
+}
+.createPoll_row{
+    margin: 15px 0;
+}
+.webDesktopVotingCard{
+    max-width: 500px;
+    background: #000 !important;
+}
+
+.contentHeight{
+    height: auto;
+}
+.coltwo{    
+    margin-top: 0 !important;
+    margin-left: -10%;
+    align-items: center;
+    align-self: center;
+}
+  .bestestLogo{
+    width: 210px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    align-items: center;
+}
+.createPollDiv{
+    color: white;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+.desktopCreateButton{
+    color: white;
+    background: #009604;
+    height: 49px;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 19px;
+    /* width: 70%; */
+    padding: 0 76px;
+    margin-top: 10px;
+}
+.voteRow{
+  margin-bottom: 10px;margin-top: 10%;width: 100%;
+}
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px !important;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.mess {
+  border: 2px solid #88ff00;
+}
+.webshareIcon{
+  font-size: x-large;
+  transform: rotateY(180deg);
+  margin-right: 10px;
+}
+.webdatetimeicon{
+color: #979797; margin-bottom: auto;
+font-size: x-small; margin-top: 9px;
+}
+.webdatetimetext{
+margin-left: 2px; font-size: x-small;
+color: #979797;
+}
+.votelabel{
+  font-family: 'Milliard-Book'!important; font-size: 16.7px; color: rgb(48,48,48);
+}
+.webvoterow{
+margin-bottom: 10px;margin-top: 10%;
+}
+@keyframes growProgressBar1 {
+  0%, 33% { --pgPercentage1: 0; }
+  100% { --pgPercentage1: var(--value1); }
+  }
+  @property --pgPercentage1 {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+  }
+  div[role="progressbar1"] {
+  --size: 12rem;
+  --bg: #53a156;
+  --fg: #e0f0e0;
+  --pgPercentage1: var(--value1);
+  animation: growProgressBar1 1s 1 alternate-reverse;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: 
+    radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0),
+    conic-gradient(var(--fg) calc(var(--pgPercentage1) * 1%), var(--bg) 0)
+    ;
+  font-size: 12px;
+  color: var(--fg);
+  }
+  div[role="progressbar1"]::before {
+ // counter-reset: percentage var(--value1);
+ color: #009604;
+  content: counter(percentage) '%';
+  }
+  .progress1 {
+    animation: progresfull 1s reverse;    
+    animation-fill-mode:both; 
+    height: 50px;
+    position: absolute;
+    z-index: -1;
+    margin-left: 0px; 
+    border-radius: 2px;
+    border: 1px solid rgb(0 150 0);
+    --progress-background : #009604 !important;
+   --buffer-background:white  !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    }
+    .progress2 {
+      animation: progreszero 1s reverse;
+      animation-fill-mode: both;
+      height: 50px;
+      position: absolute;
+      z-index: -1;
+      margin-left: 0px;
+      border-radius: 3.7px;
+    //  border: 2px solid #009604;
+    border-top: 1px solid rgb(0 150 0);
+    border-bottom: 1px solid rgb(0 150 0);
+      --progress-background: rgb(199 ,232 ,200) !important;
+      white-space: nowrap;
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    @keyframes progreszero {
+      0% {
+        width: 3%;
+      }
+    
+      100% {
+        width: 100%;
+      }
+    };
+    
+  @keyframes progresfull{
+  0%{
+    width: 100%;
+  }
+  100%{
+      width: 0%;
+  }
+  };
+  .defaultprogres {
+    animation: defaultprogres 0ms reverse;
+    animation-fill-mode: both;
+    height: 50px;
+    position: absolute;
+    z-index: -1;
+    margin-left: 0px;
+    --progress-background: rgb(199 ,232 ,200)!important;
+    //--buffer-background:white  !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  @keyframes defaultprogres {
+    0% {
+      width: 3%;
+    }
+    100% {
+      width: 100%;
+    }
+  };
+  .progress4 {
+    animation: progresfulltest1 800ms reverse;
+    animation-fill-mode: both;
+    height: 50px;
+    position: absolute;
+    z-index: -1;
+    margin-left: 0px;
+    border-radius: 3.7px;
+    border-top: 1px solid rgb(0 150 0);
+    border-bottom: 1px solid rgb(0 150 0);
+    --progress-background: rgb(0 150 0) !important;
+    --buffer-background:rgb(199 ,232 ,200)  !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+  }
+  @keyframes progresfulltest1 {
+    0% {
+      width: 0%;
+    }
+  
+    100% {
+      width: 100%;
+    }
+  };

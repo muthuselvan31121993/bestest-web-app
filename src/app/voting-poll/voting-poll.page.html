@@ -1,0 +1,294 @@
+<ion-content class="ionContentClass">
+  <ion-grid class="contentHeight">
+    <ion-row class="contentHeight">
+      <ion-col [ngClass]="votingCard()">
+        <ion-card class="cardClass" no-padding *ngIf="isCardEnabled">
+          <div>
+            <ion-icon src="../../../assets/icon/option.svg" class="more" color="primary" (click)="showMenu()">
+            </ion-icon>
+          </div>
+
+          <ion-item style="margin-top: 20px" lines="none">
+            <ion-avatar>
+              <img [src]="poll?.user?.photo_url!= null ? poll?.user?.photo_url : defaultImageURL" />
+            </ion-avatar>
+            <div style="margin-left: 10px">
+              <ion-label class="userName">{{ poll?.user?.name }} </ion-label>
+              <ion-label style="font-size: x-small">@{{ poll?.user?.username }}</ion-label>
+            </div>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-text class="poll">{{ poll?.poll }}</ion-text>
+          </ion-item>
+          <div *ngFor="let items of poll?.candidates;let j = index">
+            <ion-row>
+              <ion-col size="10">
+                <ion-item *ngIf="poll?.type === 'text'" lines="none">
+                  <ion-input id="inputValue" (click)="getValue(poll , items)" [(ngModel)]="items.candidate"
+                    class="inputText" [readonly]="true" type="text">
+                    <ion-progress-bar class="progress2" *ngIf="
+                    poll.type === 'text' &&
+                    hasJsonProp(poll, 'results') && getProgressPercent(items.id, poll?.results?.results)==0" 
+                    value="1">
+                  </ion-progress-bar> 
+                  <ion-progress-bar class="defaultprogres" 
+                  value="1"></ion-progress-bar>
+                  <ion-progress-bar class="progress4" *ngIf="poll.deletevote && pollclick== items.id"
+                    value="1">
+                </ion-progress-bar>
+                  <ion-progress-bar class="progress1" *ngIf="
+                  poll.type === 'text' &&
+                  hasJsonProp(poll, 'results') && getProgressPercent(items.id, poll?.results?.results)!=0" 
+                  value="{{getProgressPercent(items.id, poll?.results?.results)}}">
+                </ion-progress-bar> 
+                  </ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="2" class="votePercent" *ngIf="votedFlag">
+                <div *ngIf="userDetails?.name==poll?.user?.name">
+                  <ion-text class="questionMarkGray" *ngIf="poll.type === 'text' && !hasJsonProp(poll, 'results')">0%
+                  </ion-text>
+                </div>
+                <div *ngIf="userDetails?.name!=poll?.user?.name">
+                  <ion-text class="questionMarkGray" style="color: #d7d7d7;"
+                    *ngIf="poll.type === 'text' && !hasJsonProp(poll, 'results')">?
+                  </ion-text>
+                </div>
+                <ion-text class="questionMark" *ngIf="poll.type === 'text' && hasJsonProp(poll, 'results')">
+                  {{getCandidateVotePercText(items.id,poll?.results?.results)}}</ion-text>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div *ngIf="poll?.type === 'image'">
+            <div *ngIf="poll?.candidates.length === 1">
+              <div *ngFor="let items of poll?.candidates" class="one-image-layout">
+                <div class="container">
+                  <img (click)="getValue(poll , items)" [src]="items?.image_url" />
+                  <div class="absoluteO">
+                    <div class="number" *ngIf="hasJsonProp(poll, 'results')">
+                      <div role="progressbar1"
+                        *ngIf="votedFlag && getCandidateVotePerc(items.id,poll?.results?.results)==0"
+                        style="--value1:100" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                      </div>
+                    </div>
+                    <div class="number"
+                      *ngIf="votedFlag && hasJsonProp(poll, 'results') && getCandidateVotePerc(items.id,poll?.results?.results) !=0">
+                      <div role="progressbar" *ngIf="votedFlag" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
+                        style="--value:{{getCandidateVotePerc(items.id,poll?.results?.results)}}"></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <ion-item style="margin-left: auto" lines="none" lines="none">
+                <ion-input [(ngModel)]="poll.option1" [readonly]="true" type="text" class="inputText">
+                </ion-input>
+              </ion-item>
+              <ion-item style="margin-left: auto" lines="none" lines="none">
+                <ion-input [(ngModel)]="poll.option2" [readonly]="true" type="text" class="inputText">
+                </ion-input>
+              </ion-item>
+            </div>
+            <div *ngIf="poll?.candidates.length === 2">
+              <div *ngIf="poll.poll_layout[0].orientation ==='centered'" class="two-image-layout-square">
+                <div *ngFor="let items of poll.candidates;let i = index" class="two-image-layout-square-item">
+                  <div class="container">
+                    <img (click)="getValue(poll , items);selectedItem = i" [src]="items.image_url"  [ngStyle]="{'border': selectedItem == i ? '4px solid rgb(0,150,0)' : ''}" />
+                    <div class="absoluteS">
+                      <div class="number" *ngIf="hasJsonProp(poll, 'results')">
+                        <div role="progressbar1"
+                          *ngIf="votedFlag && getCandidateVotePerc(items.id,poll?.results?.results)==0"
+                          style="--value1:100" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                      </div>
+                      <div class="number"
+                        *ngIf="votedFlag && hasJsonProp(poll, 'results') && getCandidateVotePerc(items.id,poll?.results?.results) !=0">
+                        <div role="progressbar" *ngIf="votedFlag" aria-valuenow="65" aria-valuemin="0"
+                          aria-valuemax="100" style="--value:{{getCandidateVotePerc(items.id,poll?.results?.results)}}">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ion-input [readonly]="true" [(ngModel)]="items.image_title" class="image-label"></ion-input>
+                </div>
+              </div>
+              <div *ngIf="poll.poll_layout[0].orientation === 'horizontal'" class="two-image-layout-horizontal">
+                <div *ngFor="let items of poll.candidates;let i = index" class="two-image-layout-horizontal-item">
+                  <div class="container">
+                    <img (click)="getValue(poll , items);selectedItem = i" [src]="items.image_url"  [ngStyle]="{'border': selectedItem == i ? '4px solid rgb(0,150,0)' : ''}" />
+                    <div class="absoluteS">
+                      <div class="number" *ngIf="hasJsonProp(poll, 'results')">
+                        <div role="progressbar1"
+                          *ngIf="votedFlag && getCandidateVotePerc(items.id,poll?.results?.results)==0"
+                          style="--value1:100" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                      </div>
+                      <div class="number"
+                        *ngIf="votedFlag && hasJsonProp(poll, 'results') && getCandidateVotePerc(items.id,poll?.results?.results) !=0">
+                        <div role="progressbar" *ngIf="votedFlag" aria-valuenow="65" aria-valuemin="0"
+                          aria-valuemax="100" style="--value:{{getCandidateVotePerc(items.id,poll?.results?.results)}}">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ion-input [readonly]="true" [(ngModel)]="items.image_title" class="image-label"></ion-input>
+                </div>
+              </div>
+              <div *ngIf="poll.poll_layout[0].orientation === 'vertical'" class="two-image-layout-vertical">
+                <div *ngFor="let items of poll.candidates;let i = index" class="two-image-layout-vertical-item">
+                  <div class="container">
+                    <img class="imageStyle" (click)="getValue(poll , items);selectedItem = i" [src]="items.image_url"  [ngStyle]="{'border': selectedItem == i ? '4px solid rgb(0,150,0)' : ''}" />
+                    <div class="absoluteTV">
+                      <div class="number" *ngIf="!hasJsonProp(poll, 'results')">
+                        <div role="progressbar1"
+                          *ngIf="votedFlag && getCandidateVotePerc(items.id,poll?.results?.results)==0"
+                          style="--value1:100" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
+                          style="--value:0">
+                        </div>
+                      </div>
+                      <div class="number" *ngIf=" hasJsonProp(poll, 'results')">
+                        <div role="progressbar" *ngIf="votedFlag" aria-valuenow="65" aria-valuemin="0"
+                          aria-valuemax="100" style="--value:{{getCandidateVotePerc(items.id,poll?.results?.results)}}">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ion-input [readonly]="true" [(ngModel)]="items.image_title" class="image-label"></ion-input>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="poll.candidates.length === 3">
+              <div *ngIf="poll.poll_layout[0].orientation ==='centered'" class="three-image-layout-square">
+                <div *ngFor="let items of poll.candidates;let i = index" class="three-image-layout-square-item">
+                  <div class="container">
+                    <img (click)="getValue(poll , items);selectedItem = i" [src]="items.image_url"  [ngStyle]="{'border': selectedItem == i ? '4px solid rgb(0,150,0)' : ''}" />
+                    <div class="absoluteTHS">
+                      <div class="number" *ngIf="hasJsonProp(poll, 'results')">
+                        <div role="progressbar1"
+                          *ngIf="votedFlag && getCandidateVotePerc(items.id,poll?.results?.results)==0"
+                          style="--value1:100" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                      </div>
+                      <div class="number"
+                        *ngIf="votedFlag && hasJsonProp(poll, 'results') && getCandidateVotePerc(items.id,poll?.results?.results) !=0">
+                        <div role="progressbar" *ngIf="votedFlag" aria-valuenow="65" aria-valuemin="0"
+                          aria-valuemax="100" style="--value:{{getCandidateVotePerc(items.id,poll?.results?.results)}}">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ion-input [readonly]="true" [(ngModel)]="items.image_title" class="image-label"></ion-input>
+                </div>
+              </div>
+              <div *ngIf="poll.poll_layout[0]?.orientation === 'default'" class="three-image-layout-horizontal">
+                <div *ngFor="let items of poll.candidates;let i = index" class="three-image-layout-horizontal-item">
+                  <div class="container">
+                    <img style="border-radius: 5px;" (click)="getValue(poll , items);selectedItem = i" [src]="items.image_url"  [ngStyle]="{'border': selectedItem == i ? '4px solid rgb(0,150,0)' : ''}"/>
+                    <div class="absoluteT">
+                      <div class="number" *ngIf="hasJsonProp(poll, 'results')">
+                        <div role="progressbar1"
+                          *ngIf="votedFlag && getCandidateVotePerc(items.id,poll?.results?.results)==0"
+                          style="--value1:100" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                      </div>
+                      <div class="number"
+                        *ngIf="votedFlag && hasJsonProp(poll, 'results') && getCandidateVotePerc(items.id,poll?.results?.results) !=0">
+                        <div role="progressbar" *ngIf="votedFlag" aria-valuenow="65" aria-valuemin="0"
+                          aria-valuemax="100" style="--value:{{getCandidateVotePerc(items.id,poll?.results?.results)}}">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ion-input [readonly]="true" [(ngModel)]="items.image_title" class="image-label"></ion-input>
+                </div>
+              </div>
+              <div *ngIf="poll.poll_layout[0]?.orientation === 'vertical'" class="three-image-layout-vertical">
+                <div *ngFor="let items of poll.candidates;let i = index" class="three-image-layout-vertical-item">
+                  <div class="container">
+                    <img style="height: 200px;" class="imageStyle" (click)="getValue(poll , items);selectedItem = i" [src]="items.image_url"  [ngStyle]="{'border': selectedItem == i ? '4px solid rgb(0,150,0)' : ''}" />
+                    <div class="absoluteTHV">
+                      <div class="number" *ngIf="hasJsonProp(poll, 'results')">
+                        <div role="progressbar1"
+                          *ngIf="votedFlag && getCandidateVotePerc(items.id,poll?.results?.results)==0"
+                          style="--value1:100" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                      </div>
+                      <div class="number"
+                        *ngIf="votedFlag && hasJsonProp(poll, 'results') && getCandidateVotePerc(items.id,poll?.results?.results) !=0">
+                        <div role="progressbar" *ngIf="votedFlag" aria-valuenow="65" aria-valuemin="0"
+                          aria-valuemax="100" style="--value:{{getCandidateVotePerc(items.id,poll?.results?.results)}}">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <ion-input [readonly]="true" [(ngModel)]="items.image_title" class="image-label"></ion-input>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="poll.candidates.length === 4" class="four-image-layout">
+              <div *ngFor="let items of poll.candidates;let i = index" class="four-image-layout-item">
+                <div class="container">
+                  <img style="border-radius: 5px;" (click)="getValue(poll , items);selectedItem = i" [src]="items.image_url"  [ngStyle]="{'border': selectedItem == i ? '4px solid rgb(0,150,0)' : ''}" />
+                  <div class="absolute">
+                    <div class="number" *ngIf="hasJsonProp(poll, 'results')">
+                      <div role="progressbar1"
+                        *ngIf="votedFlag && getCandidateVotePerc(items.id,poll?.results?.results)==0"
+                        style="--value1:100" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                      </div>
+                    </div>
+                    <div class="number"
+                      *ngIf="votedFlag && hasJsonProp(poll, 'results') && getCandidateVotePerc(items.id,poll?.results?.results) !=0">
+                      <div role="progressbar" *ngIf="votedFlag" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
+                        style="--value:{{getCandidateVotePerc(items.id,poll?.results?.results)}}"></div>
+                    </div>
+                  </div>
+                </div>
+                <ion-input [readonly]="true" [(ngModel)]="items.image_title" placeholder="Title Image"
+                  class="image-label">
+                </ion-input>
+              </div>
+            </div>
+          </div>
+          <ion-row style="margin-bottom: 10px" class="voteCard">
+            <ion-col>
+              <div style="margin-top: 20%; color: #979797; margin-bottom: auto">
+                <ion-icon style="font-size: x-small" name="time-outline"></ion-icon>
+                <ion-text class="createdAt">
+                  {{poll.created_at | date}}.{{poll.created_at | date:"HH:mm a"}}
+                </ion-text>
+              </div>
+            </ion-col>
+            <ion-col class="voteBox">
+              <div style="margin-top: 5%;margin-right: 10px;">
+
+                <ion-label *ngIf="!votedFlag " class="votelabel">Vote to see results
+                </ion-label>
+                <ion-label *ngIf="poll.totalVotes !== 0 && votedFlag" class="votelabel">Votes:<span
+                    class="voteResult">{{poll.totalVotes}}</span></ion-label>
+              </div>
+              <ion-icon name="share-social" class="shareIcon" color="primary">
+              </ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+        <ion-row class="createPoll_row" *ngIf="IsEnabledCreatePoll && platformFlag">
+          <ion-col class="btnCol">
+            <!-- <button class="btnCss" type="button" (click)="createPoll()">Create your own poll</button> -->
+            <a class="btnCss"  href="https://bestest-dev.web.app/create-poll?userID={{userID}}">Create your own poll</a>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col class="coltwo" *ngIf="!platformFlag">
+        <img class="bestestLogo" src="../../assets/icon/bestestWhite.png">
+        <div class="createPollDiv">Creating and sharing polls just got easier</div>
+        <ion-row class="createPoll_row" *ngIf="IsEnabledCreatePoll">
+          <ion-col class="btnCol">
+            <!-- <button class="desktopCreateButton" type="button" (click)="createPoll()">Create your own poll</button> -->
+            <a class="btnCss" href="https://bestest-dev.web.app/create-poll?userID={{userID}}">Create your own poll</a>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
