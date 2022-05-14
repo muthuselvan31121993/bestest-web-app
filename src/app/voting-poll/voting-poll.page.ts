@@ -13,6 +13,8 @@ import {
 } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-voting-poll',
@@ -53,7 +55,7 @@ export class VotingPollPage implements OnInit {
   };
   platformFlag: boolean = false;
   textPoll_img_type: string = "";
-  textPoll_img_url: string = "";
+  textPoll_img_url: any = "";
   youtubeRegex =
     /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|\?v=)([^#&?]*).*/;
   approvedImages = ['jpeg', 'jpg', 'png'];
@@ -93,7 +95,7 @@ export class VotingPollPage implements OnInit {
   isValidGifSource = (url: string | string[]) =>
     this.approvedGifSources.some((v) => url.indexOf(v) >= 0);
 
-  constructor(private titleService: Title, private metaService: Meta,
+  constructor(private _sanitizer:DomSanitizer,private titleService: Title, private metaService: Meta,
     private route: ActivatedRoute, private http: HttpClient, private userMediaService: UserMediaTrayService, private popoverController: PopoverController, private alertCtrl: AlertController) {
     this.route.queryParamMap
       .subscribe((params) => {
@@ -241,7 +243,9 @@ export class VotingPollPage implements OnInit {
       const youtubeEmbedURL = this.validateYouTubeUrl(videoOrGifURL);
       if (youtubeEmbedURL) {
         this.textPoll_img_type = "youtube";
-        this.textPoll_img_url = youtubeEmbedURL;
+        this.textPoll_img_url=this._sanitizer.bypassSecurityTrustResourceUrl(youtubeEmbedURL);
+
+
       }
     } 
     const isValidGifSource = this.isValidGifSource(videoOrGifURL) || ext === 'gif'; 
