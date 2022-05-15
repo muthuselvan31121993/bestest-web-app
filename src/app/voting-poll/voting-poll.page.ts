@@ -98,13 +98,13 @@ export class VotingPollPage implements OnInit {
   constructor(private Platform:Platform,private _sanitizer:DomSanitizer,private titleService: Title, private metaService: Meta,
     private route: ActivatedRoute, private http: HttpClient, private userMediaService: UserMediaTrayService, private popoverController: PopoverController, private alertCtrl: AlertController) {
       // 
-      if(this.Platform.is('cordova'))
-        this.platformFlag=true;
-      else{
-          if(isPlatform('ios') || isPlatform('android'))
-             this.platformFlag = true;
-          else this.platformFlag=false
-      }
+      // if(this.Platform.is('cordova'))
+      //   this.platformFlag=true;
+      // else{
+      //     if(isPlatform('ios') || isPlatform('android'))
+      //        this.platformFlag = true;
+      //     else this.platformFlag=false
+      // }
       this.route.queryParamMap
       .subscribe((params) => {
         let paramsObject: any;
